@@ -9,6 +9,9 @@ class UMirrorTool : public UBaseEditorTool
 	GENERATED_BODY()
 
 public:
+	UMirrorTool();
+
+public:
 	UPROPERTY(EditAnywhere, Category = "Settings")
 	FPlane MirrorPlane;
 
