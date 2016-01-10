@@ -24,6 +24,7 @@
 *.suo
 *.opensdf
 *.sdf
+*.opendb
 
 # Standard binary files
 *.lib

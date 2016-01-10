@@ -1,0 +1,26 @@
+{
+	"FileVersion" : 3,
+	
+	"FriendlyName" : "Demo Editor Extensions",
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"CreatedBy" : "Epic Games, Inc.",
+	"CreatedByURL" : "http://epicgames.com",
+	"EngineVersion" : "4.7.0",
+	"Description" : "A demo of Editor Extensions",
+	"Category" : "Examples",
+	"EnabledByDefault" : true,
+	
+	"Modules" :
+	[
+		{
+			"Name" : "DemoEditorExtensionsRuntime",
+			"Type" : "Runtime",
+			"LoadingPhase" : "PreDefault"
+		},
+		{
+			"Name" : "DemoEditorExtensionsEditor",
+			"Type" : "Editor",
+		}
+	]
+}
