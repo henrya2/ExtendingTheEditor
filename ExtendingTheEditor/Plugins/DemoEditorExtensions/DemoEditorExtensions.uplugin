@@ -20,7 +20,7 @@
 		},
 		{
 			"Name" : "DemoEditorExtensionsEditor",
-			"Type" : "Editor",
+			"Type" : "Editor"
 		}
 	]
 }

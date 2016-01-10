@@ -67,6 +67,7 @@
 
 # Other binaries
 /.ue4dependencies
+/ExtendingTheEditor/.vs/**
 /ExtendingTheEditor/Binaries/**
 !/ExtendingTheEditor/Binaries/DotNET
 !/ExtendingTheEditor/Binaries/DotNET/GitDependencies.*
