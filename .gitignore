@@ -66,17 +66,5 @@
 /*/Saved/**
 
 # Other binaries
-/.ue4dependencies
 /ExtendingTheEditor/.vs/**
 /ExtendingTheEditor/Binaries/**
-!/ExtendingTheEditor/Binaries/DotNET
-!/ExtendingTheEditor/Binaries/DotNET/GitDependencies.*
-/ExtendingTheEditor/Content/**
-!/ExtendingTheEditor/Content/RestrictedAssets
-/ExtendingTheEditor/Content/RestrictedAssets/**
-!/ExtendingTheEditor/Content/RestrictedAssets/Blueprints/**
-/ExtendingTheEditor/Plugins/ContentOnly/Content/**
-/ExtendingTheEditor/Plugins/SampleGameMode/Binaries/**
-/ExtendingTheEditor/Plugins/SampleGameMode/Content/**
-/ExtendingTheEditor/Plugins/SampleMutator/Binaries/**
-/ExtendingTheEditor/Releases/**
