@@ -1,0 +1,80 @@
+#
+# This file tells Git about engine files that never really belong in source control.  They are usually build products, log 
+# files and intermediate files generated from a compiler or the engine runtime.
+#
+#
+# NOTE:
+#  Paths that start with / match paths relative to the root (where the .gitignore file is)
+#  Paths that end with / will match a folder and all files under it (but not a regular file with no extension)
+#  Use * for wildcards.  Wildcards stop at path separators
+#  Use ** for a wildcard that spans path separators
+#  Paths in this file should use forward slash characters, not back slashes
+#  Use \ to escape special characters like ! and #
+#  Use ! to negate a previous pattern.  But it doesn't work if the parent sub-folder was masked out already.
+# 
+
+
+# Ignore project files in the root
+/*.sln
+/*.xcodeproj
+/*/*.sln
+/*/*.xcodeproj
+
+# Ignore local user Visual Studio files in any folder
+*.suo
+*.opensdf
+*.sdf
+
+# Standard binary files
+*.lib
+*.idb
+*.a
+*.dll
+*.exe
+*.png
+*.bz2
+*.psd
+*.gif
+*.zip
+*.tga
+*.dylib
+*.gz
+*.so
+*.jar
+*.mp4
+*.pak
+*.bmp
+*.obj
+*.pdb
+**/*.framework/**
+
+# Always exclude content folders
+**/Content/**
+
+# Derived data cache is never checked in
+/*/DerivedDataCache/**
+
+# Engine intermediates
+/*/Intermediate/**
+/*/Plugins/**/Intermediate/**
+
+/*/Binaries/**
+/*/Plugins/**/Binaries/**
+
+# Ignore any saved local files
+/*/Saved/**
+
+# Other binaries
+/.ue4dependencies
+/ExtendingTheEditor/Binaries/**
+!/ExtendingTheEditor/Binaries/DotNET
+!/ExtendingTheEditor/Binaries/DotNET/GitDependencies.*
+/ExtendingTheEditor/Content/**
+!/ExtendingTheEditor/Content/RestrictedAssets
+/ExtendingTheEditor/Content/RestrictedAssets/**
+!/ExtendingTheEditor/Content/RestrictedAssets/Blueprints/**
+/ExtendingTheEditor/Plugins/ContentOnly/Content/**
+/ExtendingTheEditor/Plugins/SampleGameMode/Binaries/**
+/ExtendingTheEditor/Plugins/SampleGameMode/Content/**
+/ExtendingTheEditor/Plugins/SampleMutator/Binaries/**
+/ExtendingTheEditor/Releases/**
