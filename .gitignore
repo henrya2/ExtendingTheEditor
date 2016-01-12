@@ -49,9 +49,6 @@
 *.pdb
 **/*.framework/**
 
-# Always exclude content folders
-**/Content/**
-
 # Derived data cache is never checked in
 /*/DerivedDataCache/**
 
