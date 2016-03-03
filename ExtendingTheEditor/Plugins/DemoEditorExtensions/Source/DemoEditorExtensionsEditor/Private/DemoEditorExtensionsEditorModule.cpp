@@ -20,6 +20,10 @@ public:
 	static void CreateToolListMenu(class FMenuBuilder& MenuBuilder);
 	static void OnToolWindowClosed(const TSharedRef<SWindow>& Window, UBaseEditorTool* Instance);
 
+	static void HandleTestCommandExcute();
+
+	static bool HandleTestCommandCanExcute();
+
 	TSharedPtr<FUICommandList> CommandList;
 };
 
@@ -40,6 +44,14 @@ void FDemoEditorExtensionsEditorModule::StartupModule()
 
 	{
 		FLevelEditorModule& LevelEditorModule = FModuleManager::LoadModuleChecked<FLevelEditorModule>(TEXT("LevelEditor"));
+
+		CommandList->Append(LevelEditorModule.GetGlobalLevelEditorActions());
+
+		CommandList->MapAction(
+			FDemoCommands::Get().TestCommand,
+			FExecuteAction::CreateStatic(&FDemoEditorExtensionsEditorModule::HandleTestCommandExcute),
+			FCanExecuteAction::CreateStatic(&FDemoEditorExtensionsEditorModule::HandleTestCommandCanExcute)
+			);
 
 		struct Local
 		{
@@ -123,6 +135,16 @@ void FDemoEditorExtensionsEditorModule::CreateToolListMenu(class FMenuBuilder& M
 void FDemoEditorExtensionsEditorModule::OnToolWindowClosed(const TSharedRef<SWindow>& Window, UBaseEditorTool* Instance)
 {
 	Instance->RemoveFromRoot();
+}
+
+void FDemoEditorExtensionsEditorModule::HandleTestCommandExcute()
+{
+	FPlatformMisc::MessageBoxExt(EAppMsgType::Ok, TEXT("Test Command Excuted!!!"), TEXT("TestCommand"));
+}
+
+bool FDemoEditorExtensionsEditorModule::HandleTestCommandCanExcute()
+{
+	return true;
 }
 
 IMPLEMENT_MODULE(FDemoEditorExtensionsEditorModule, DemoEditorExtensionsEditor);
