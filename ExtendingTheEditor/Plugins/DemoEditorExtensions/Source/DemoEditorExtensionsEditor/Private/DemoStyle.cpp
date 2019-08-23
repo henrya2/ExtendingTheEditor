@@ -1,5 +1,5 @@
-#include "DemoEditorExtensionsEditorPrivatePCH.h"
 #include "DemoStyle.h"
+#include "DemoEditorExtensionsEditorPrivatePCH.h"
 
 void FDemoStyle::Initialize()
 {

@@ -1,5 +1,5 @@
-#include "DemoEditorExtensionsEditorPrivatePCH.h"
 #include "MirrorTool.h"
+#include "DemoEditorExtensionsEditorPrivatePCH.h"
 #include "ScopedTransaction.h"
 
 #define LOCTEXT_NAMESPACE "DemoTools"

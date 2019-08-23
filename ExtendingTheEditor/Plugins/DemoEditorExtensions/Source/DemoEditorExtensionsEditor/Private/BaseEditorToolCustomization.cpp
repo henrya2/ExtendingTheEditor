@@ -1,5 +1,5 @@
-#include "DemoEditorExtensionsEditorPrivatePCH.h"
 #include "BaseEditorToolCustomization.h"
+#include "DemoEditorExtensionsEditorPrivatePCH.h"
 #include "PropertyEditing.h"
 
 #define LOCTEXT_NAMESPACE "BaseToolEditor"

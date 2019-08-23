@@ -1,7 +1,7 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 
-#include "ExtendingTheEditor.h"
 #include "ExtendingTheEditorHUD.h"
+#include "ExtendingTheEditor.h"
 #include "Engine/Canvas.h"
 #include "TextureResource.h"
 #include "CanvasItem.h"

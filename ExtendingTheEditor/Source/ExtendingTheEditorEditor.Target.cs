@@ -9,6 +9,6 @@ public class ExtendingTheEditorEditorTarget : TargetRules
 	{
 		Type = TargetType.Editor;
 		
-		ExtraModuleNames.AddRange( new string[] { "ExtendingTheEditorEditor" } );
+		ExtraModuleNames.AddRange( new string[] { "ExtendingTheEditor" } );
 	}
 }
