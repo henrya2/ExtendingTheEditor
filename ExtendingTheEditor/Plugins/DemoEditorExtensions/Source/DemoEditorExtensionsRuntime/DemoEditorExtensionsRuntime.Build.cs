@@ -2,7 +2,7 @@ using UnrealBuildTool;
 
 public class DemoEditorExtensionsRuntime : ModuleRules
 {
-	public DemoEditorExtensionsRuntime(TargetInfo Target)
+	public DemoEditorExtensionsRuntime(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PublicDependencyModuleNames.AddRange(
 			new string[] {
