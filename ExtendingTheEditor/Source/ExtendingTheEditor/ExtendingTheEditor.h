@@ -3,7 +3,8 @@
 #ifndef __EXTENDINGTHEEDITOR_H__
 #define __EXTENDINGTHEEDITOR_H__
 
-#include "EngineMinimal.h"
+#include "CoreMinimal.h"
+#include "Engine.h"
 
 
 #endif

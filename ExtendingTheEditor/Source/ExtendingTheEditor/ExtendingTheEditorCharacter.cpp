@@ -1,8 +1,8 @@
 // Copyright 1998-2015 Epic Games, Inc. All Rights Reserved.
 
-#include "ExtendingTheEditor.h"
 #include "ExtendingTheEditorCharacter.h"
-#include "ExtendingTheEditorProjectile.h"
+#include "ExtendingTheEditor.h"
+//#include "ExtendingTheEditorProjectile.h"
 #include "Animation/AnimInstance.h"
 #include "GameFramework/InputSettings.h"
 
@@ -22,14 +22,14 @@ AExtendingTheEditorCharacter::AExtendingTheEditorCharacter()
 
 	// Create a CameraComponent	
 	FirstPersonCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("FirstPersonCamera"));
-	FirstPersonCameraComponent->AttachParent = GetCapsuleComponent();
+	FirstPersonCameraComponent->AttachToComponent( GetCapsuleComponent(), FAttachmentTransformRules::KeepWorldTransform);
 	FirstPersonCameraComponent->RelativeLocation = FVector(0, 0, 64.f); // Position the camera
 	FirstPersonCameraComponent->bUsePawnControlRotation = true;
 
 	// Create a mesh component that will be used when being viewed from a '1st person' view (when controlling this pawn)
 	Mesh1P = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("CharacterMesh1P"));
 	Mesh1P->SetOnlyOwnerSee(true);
-	Mesh1P->AttachParent = FirstPersonCameraComponent;
+	Mesh1P->AttachToComponent( FirstPersonCameraComponent, FAttachmentTransformRules::KeepWorldTransform);
 	Mesh1P->bCastDynamicShadow = false;
 	Mesh1P->CastShadow = false;
 
@@ -38,7 +38,7 @@ AExtendingTheEditorCharacter::AExtendingTheEditorCharacter()
 	FP_Gun->SetOnlyOwnerSee(true);			// only the owning player will see this mesh
 	FP_Gun->bCastDynamicShadow = false;
 	FP_Gun->CastShadow = false;
-	FP_Gun->AttachTo(Mesh1P, TEXT("GripPoint"), EAttachLocation::SnapToTargetIncludingScale, true);
+	FP_Gun->AttachToComponent(Mesh1P, FAttachmentTransformRules::KeepWorldTransform);
 
 
 	// Default offset from the character location for projectiles to spawn
@@ -80,19 +80,19 @@ void AExtendingTheEditorCharacter::SetupPlayerInputComponent(class UInputCompone
 void AExtendingTheEditorCharacter::OnFire()
 { 
 	// try and fire a projectile
-	if (ProjectileClass != NULL)
-	{
-		const FRotator SpawnRotation = GetControlRotation();
-		// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
-		const FVector SpawnLocation = GetActorLocation() + SpawnRotation.RotateVector(GunOffset);
-
-		UWorld* const World = GetWorld();
-		if (World != NULL)
-		{
-			// spawn the projectile at the muzzle
-			World->SpawnActor<AExtendingTheEditorProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
-		}
-	}
+// 	if (ProjectileClass != NULL)
+// 	{
+// 		const FRotator SpawnRotation = GetControlRotation();
+// 		// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
+// 		const FVector SpawnLocation = GetActorLocation() + SpawnRotation.RotateVector(GunOffset);
+// 
+// 		UWorld* const World = GetWorld();
+// 		if (World != NULL)
+// 		{
+// 			// spawn the projectile at the muzzle
+// 			World->SpawnActor<AExtendingTheEditorProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+// 		}
+// 	}
 
 	// try and play the sound if specified
 	if (FireSound != NULL)

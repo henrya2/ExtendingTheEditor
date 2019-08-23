@@ -2,9 +2,11 @@ using UnrealBuildTool;
 
 public class DemoEditorExtensionsEditor : ModuleRules
 {
-	public DemoEditorExtensionsEditor(TargetInfo Target)
+	public DemoEditorExtensionsEditor(ReadOnlyTargetRules Target) : base(Target)
 	{
-		PublicDependencyModuleNames.AddRange(
+        PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
+        PublicDependencyModuleNames.AddRange(
 			new string[] {
 				"Core",
 				"CoreUObject",

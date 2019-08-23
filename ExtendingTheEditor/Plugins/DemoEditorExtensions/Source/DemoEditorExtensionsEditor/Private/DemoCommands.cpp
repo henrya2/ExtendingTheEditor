@@ -1,5 +1,5 @@
-#include "DemoEditorExtensionsEditorPrivatePCH.h"
 #include "DemoCommands.h"
+#include "DemoEditorExtensionsEditorPrivatePCH.h"
 
 #define LOCTEXT_NAMESPACE "DemoTools"
 
