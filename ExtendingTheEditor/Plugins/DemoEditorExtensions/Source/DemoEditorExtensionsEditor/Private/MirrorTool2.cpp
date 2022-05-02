@@ -1,16 +1,16 @@
+#include "MirrorTool2.h"
 #include "DemoEditorExtensionsEditorPrivatePCH.h"
-#include "MirrorTool.h"
 #include "ScopedTransaction.h"
 
 #define LOCTEXT_NAMESPACE "DemoTools"
 
-UMirrorTool::UMirrorTool()
+UMirrorTool2::UMirrorTool2()
 	: Super(FObjectInitializer::Get())
 {
 	MirrorPlane = FPlane(1.0, 0.0f, 0.0f, 0.0f);
 }
 
-void UMirrorTool::MirrorSelectedObjects()
+void UMirrorTool2::MirrorSelectedObjects()
 {
 	FScopedTransaction Transaction(LOCTEXT("MirrorAboutPlane", "Mirror about plane"));
 	for (FSelectionIterator It(GEditor->GetSelectedActorIterator()); It; ++It)
