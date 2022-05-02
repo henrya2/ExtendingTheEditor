@@ -1,15 +1,15 @@
 #pragma once
 
 #include "BaseEditorTool.h"
-#include "MirrorTool.generated.h"
+#include "MirrorTool2.generated.h"
 
 UCLASS(Blueprintable)
-class UMirrorTool : public UBaseEditorTool
+class UMirrorTool2 : public UBaseEditorTool
 {
 	GENERATED_BODY()
 
 public:
-	UMirrorTool();
+	UMirrorTool2();
 
 public:
 	UPROPERTY(EditAnywhere, Category = "Settings")
